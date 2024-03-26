@@ -1,0 +1,38 @@
+{
+    "data": {
+        "webApiServiceByResolutionPath": {
+            "goid": "55af8e8c1e2bf449f55c617d9ae7f303",
+            "guid": "05486815-72c0-46aa-b480-43d8a1a168c8",
+            "name": "Hello",
+            "resolutionPath": "/cob/hello*",
+            "checksum": "f8e79c9cf0e9c14baee283013d9643b13283626a",
+            "enabled": true,
+            "folderPath": "/cob",
+            "methodsAllowed": [
+                "GET",
+                "POST",
+                "PUT",
+                "DELETE"
+            ],
+            "properties": [
+                {
+                    "name": "latencyMetrics.settings",
+                    "value": "false|OCCURRENCE|1"
+                },
+                {
+                    "name": "latencyMetrics.subservices",
+                    "value": ""
+                },
+                {
+                    "name": "latencyMetrics.captureClientAndFolder",
+                    "value": "true|false"
+                }
+            ],
+            "tracingEnabled": false,
+            "wssProcessingEnabled": false,
+            "policy": {
+                "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<wsp:Policy xmlns:L7p=\"http://www.layer7tech.com/ws/policy\" xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2002/12/policy\">\n    <wsp:All wsp:Usage=\"Required\">\n        <wsp:OneOrMore wsp:Usage=\"Required\">\n            <wsp:All wsp:Usage=\"Required\">\n                <L7p:ComparisonAssertion>\n                    <L7p:CaseSensitive booleanValue=\"false\"/>\n                    <L7p:Expression1 stringValue=\"${gateway.x-hello}\"/>\n                    <L7p:Operator operatorNull=\"null\"/>\n                    <L7p:Predicates predicates=\"included\">\n                        <L7p:item dataType=\"included\">\n                            <L7p:Type variableDataType=\"string\"/>\n                        </L7p:item>\n                        <L7p:item stringLength=\"included\">\n                            <L7p:Max intValue=\"-1\"/>\n                            <L7p:Min intValue=\"1\"/>\n                        </L7p:item>\n                    </L7p:Predicates>\n                </L7p:ComparisonAssertion>\n                <L7p:HardcodedResponse>\n                    <L7p:Base64ResponseBody stringValue=\"ewoibWVzc2FnZSI6ICJIZWxsbyAke2dhdGV3YXkueC1oZWxsb30iCn0=\"/>\n                    <L7p:ResponseContentType stringValue=\"application/json; charset=UTF-8\"/>\n                </L7p:HardcodedResponse>\n            </wsp:All>\n            <wsp:All wsp:Usage=\"Required\">\n                <L7p:HardcodedResponse>\n                    <L7p:Base64ResponseBody stringValue=\"ewoibWVzc2FnZSI6ICJIZWxsbyBZb3UgKHgtaGVsbG8gbm90IGRlZmluZWQpLiIKfQ==\"/>\n                    <L7p:ResponseContentType stringValue=\"application/json; charset=UTF-8\"/>\n                </L7p:HardcodedResponse>\n            </wsp:All>\n        </wsp:OneOrMore>\n    </wsp:All>\n</wsp:Policy>\n"
+            }
+        }
+    }
+}
