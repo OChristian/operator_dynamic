@@ -15,6 +15,11 @@
         "description": "",
         "hiddenProperty": false,
         "value": "CWP cob 2"
+      },
+      {
+        "name": "x-hello",
+        "description": "",
+        "value": "James"
       }
     ],
     "properties": {
@@ -30,10 +35,6 @@
           {
             "action": "NEW_OR_UPDATE",
             "default": true
-          },
-          {
-            "name": "x-hello",
-            "action": "DELETE"
           }
         ]
       }
