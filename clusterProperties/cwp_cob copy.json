@@ -28,13 +28,8 @@
     "mappings": {
       "clusterProperties": [
         {
-          "action": "NEW_OR_EXISTING",
-          "default": true,
-          "failOnNew": false
-        },
-        {
-          "name": "x-hello",
-          "action": "DELETE"
+          "action": "DELETE",
+          "default": true
         }
       ]
     }
