@@ -1,11 +1,8 @@
 {
     "data": {
         "webApiServiceByResolutionPath": {
-            "goid": "55af8e8c1e2bf449f55c617d9ae7f303",
-            "guid": "05486815-72c0-46aa-b480-43d8a1a168c8",
             "name": "Hello",
             "resolutionPath": "/cob/hello*",
-            "checksum": "f8e79c9cf0e9c14baee283013d9643b13283626a",
             "enabled": true,
             "folderPath": "/cob",
             "methodsAllowed": [
