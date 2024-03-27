@@ -236,5 +236,17 @@
         "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<wsp:Policy xmlns:L7p=\"http://www.layer7tech.com/ws/policy\" xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2002/12/policy\">\n    <wsp:All wsp:Usage=\"Required\">\n        <L7p:CommentAssertion>\n            <L7p:Comment stringValue=\"Policy Fragment: Router\"/>\n        </L7p:CommentAssertion>\n        <L7p:ApiPortalEncassIntegration/>\n        <L7p:SetVariable>\n            <L7p:Base64Expression stringValue=\"ew0KImRldiI6ICIke0RldkxvY2F0aW9ufSIsDQoicWEiOiAiJHtRQUxvY2F0aW9ufSIsDQoicHJvZCI6ICIke1Byb2RMb2NhdGlvbn0iDQp9\"/>\n            <L7p:VariableToSet stringValue=\"locations\"/>\n        </L7p:SetVariable>\n        <L7p:SetVariable>\n            <L7p:Base64Expression stringValue=\"JHtnYXRld2F5LmVudmlyb25tZW50fQ==\"/>\n            <L7p:VariableToSet stringValue=\"environment\"/>\n        </L7p:SetVariable>\n        <L7p:JavaScript>\n            <L7p:ExecutionTimeout stringValue=\"\"/>\n            <L7p:Name stringValue=\"\"/>\n            <L7p:Script stringValueReference=\"inline\"><![CDATA[var locations = JSON.parse(context.getVariable(\"locations\"));\nvar environment = context.getVariable(\"environment\");\nvar newLocation = locations[environment];\n\ncontext.setVariable(\"apiLocation\", newLocation);\n]]></L7p:Script>\n        </L7p:JavaScript>\n    </wsp:All>\n</wsp:Policy>\n"
       }
     }
-  ]
+  ],
+  "properties": {
+    "meta": {
+    },
+    "mappings": {
+      "webApiServices": [
+        {
+          "action": "DELETE",
+          "default": true
+        }
+      ]
+    }
+  }
 }
