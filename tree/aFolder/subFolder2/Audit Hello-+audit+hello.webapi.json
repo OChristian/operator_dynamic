@@ -1,0 +1,20 @@
+{
+  "goid": "b333f76d828b0e6009541ace9bce3c9c",
+  "guid": "9ca8b7a5-82b3-413a-a5a6-183c476eb673",
+  "name": "Audit Hello",
+  "resolutionPath": "/audit/hello",
+  "checksum": "b04be04b5ac821776fa6de054c0c5c9cc9819888",
+  "enabled": true,
+  "folderPath": "/aFolder/subFolder2",
+  "methodsAllowed": [
+    "GET",
+    "POST",
+    "PUT",
+    "DELETE"
+  ],
+  "tracingEnabled": false,
+  "wssProcessingEnabled": false,
+  "policy": {
+    "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<wsp:Policy xmlns:L7p=\"http://www.layer7tech.com/ws/policy\" xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2002/12/policy\">\n    <wsp:All wsp:Usage=\"Required\">\n        <L7p:Encapsulated>\n            <L7p:EncapsulatedAssertionConfigGuid stringValue=\"0a0322ec-b100-4c74-a420-b2a4abb00ef5\"/>\n            <L7p:EncapsulatedAssertionConfigName stringValue=\"Add Audit\"/>\n        </L7p:Encapsulated>\n        <L7p:HardcodedResponse>\n            <L7p:Base64ResponseBody stringValue=\"ewoibWVzc2FnZSI6ICJoZWxsbyEiLAoiZW52aXJvbm1lbnQiOiAiJHtnYXRld2F5LmVudmlyb25tZW50fSIKfQo=\"/>\n            <L7p:ResponseContentType stringValue=\"application/json; charset=UTF-8\"/>\n        </L7p:HardcodedResponse>\n    </wsp:All>\n</wsp:Policy>\n "
+  }
+}
