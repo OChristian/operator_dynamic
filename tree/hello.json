@@ -1,0 +1,24 @@
+{
+  "webApiServices": [
+    {
+      "goid": "78aa7390c10fec367f17caaa88ad5617",
+      "guid": "6723248e-3b46-44c9-bafd-575f48d87078",
+      "name": "Hello",
+      "resolutionPath": "/hello*",
+      "checksum": "61fc2e7aaa5290a4c45f4c75961c86fde20818bc",
+      "enabled": true,
+      "folderPath": "/",
+      "methodsAllowed": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "tracingEnabled": false,
+      "wssProcessingEnabled": false,
+      "policy": {
+        "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<wsp:Policy xmlns:L7p=\"http://www.layer7tech.com/ws/policy\" xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2002/12/policy\">\n    <wsp:All wsp:Usage=\"Required\">\n        <L7p:FaultLevel>\n            <L7p:LevelInfo soapFaultLevel=\"included\">\n                <L7p:Level intValue=\"4\"/>\n            </L7p:LevelInfo>\n        </L7p:FaultLevel>\n        <L7p:SetVariable>\n            <L7p:Base64Expression stringValue=\"dmFsdWUx\"/>\n            <L7p:VariableToSet stringValue=\"var1\"/>\n        </L7p:SetVariable>\n        <L7p:SetVariable>\n            <L7p:Base64Expression stringValue=\"dmFsdWUy\"/>\n            <L7p:VariableToSet stringValue=\"var2\"/>\n        </L7p:SetVariable>\n        <L7p:UUIDGenerator>\n            <L7p:TargetVariable stringValue=\"baggage\"/>\n        </L7p:UUIDGenerator>\n        <L7p:AddHeader>\n            <L7p:HeaderName stringValue=\"baggage\"/>\n            <L7p:HeaderValue stringValue=\"k1=value1\"/>\n        </L7p:AddHeader>\n        <L7p:HttpRoutingAssertion>\n            <L7p:OmitAuthHeaderConnectReuseSystemDefault boxedBooleanValue=\"true\"/>\n            <L7p:ProtectedServiceUrl stringValue=\"https://localhost:8443/be\"/>\n            <L7p:ProxyPassword stringValueNull=\"null\"/>\n            <L7p:ProxyUsername stringValueNull=\"null\"/>\n            <L7p:RequestHeaderRules httpPassthroughRuleSet=\"included\">\n                <L7p:ForwardAll booleanValue=\"true\"/>\n                <L7p:Rules httpPassthroughRules=\"included\">\n                    <L7p:item httpPassthroughRule=\"included\">\n                        <L7p:Name stringValue=\"Cookie\"/>\n                    </L7p:item>\n                    <L7p:item httpPassthroughRule=\"included\">\n                        <L7p:Name stringValue=\"SOAPAction\"/>\n                    </L7p:item>\n                </L7p:Rules>\n            </L7p:RequestHeaderRules>\n            <L7p:RequestParamRules httpPassthroughRuleSet=\"included\">\n                <L7p:ForwardAll booleanValue=\"true\"/>\n                <L7p:Rules httpPassthroughRules=\"included\"/>\n            </L7p:RequestParamRules>\n            <L7p:ResponseHeaderRules httpPassthroughRuleSet=\"included\">\n                <L7p:ForwardAll booleanValue=\"true\"/>\n                <L7p:Rules httpPassthroughRules=\"included\">\n                    <L7p:item httpPassthroughRule=\"included\">\n                        <L7p:Name stringValue=\"Set-Cookie\"/>\n                    </L7p:item>\n                </L7p:Rules>\n            </L7p:ResponseHeaderRules>\n            <L7p:SamlAssertionVersion intValue=\"2\"/>\n        </L7p:HttpRoutingAssertion>\n        <L7p:SetVariable>\n            <L7p:Base64Expression stringValue=\"dmFsdWUyLW5ldw==\"/>\n            <L7p:VariableToSet stringValue=\"var2\"/>\n        </L7p:SetVariable>\n    </wsp:All>\n</wsp:Policy>\n"
+      }
+    }
+  ]
+}
