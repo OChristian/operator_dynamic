@@ -1,0 +1,24 @@
+{
+  "webApiServices": [
+    {
+      "goid": "0dac9028f3cb9082d6e724d14ae91542",
+      "guid": "b6fd7340-61f8-425e-be5d-134c3ea36373",
+      "name": "Back-end",
+      "resolutionPath": "/be",
+      "checksum": "c6f595900fff9cf024264aa2016d351eac9ed40c",
+      "enabled": true,
+      "folderPath": "/",
+      "methodsAllowed": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "tracingEnabled": false,
+      "wssProcessingEnabled": false,
+      "policy": {
+        "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<wsp:Policy xmlns:L7p=\"http://www.layer7tech.com/ws/policy\" xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2002/12/policy\">\n    <wsp:All wsp:Usage=\"Required\">\n        <L7p:RaiseError>\n            <L7p:Enabled booleanValue=\"false\"/>\n        </L7p:RaiseError>\n        <L7p:SetVariable>\n            <L7p:Base64Expression stringValue=\"dmFsdWUx\"/>\n            <L7p:VariableToSet stringValue=\"var1\"/>\n        </L7p:SetVariable>\n        <L7p:SetVariable>\n            <L7p:Base64Expression stringValue=\"dmFsdWUy\"/>\n            <L7p:VariableToSet stringValue=\"var2\"/>\n        </L7p:SetVariable>\n        <L7p:HardcodedResponse>\n            <L7p:Base64ResponseBody stringValue=\"QmFjay1lbmQgLSBIZWxsbyAhCiR7dmFyMX0KJHt2YXIyfQoke290ZWwudHJhY2VJZH0=\"/>\n        </L7p:HardcodedResponse>\n    </wsp:All>\n</wsp:Policy>\n"
+      }
+    }
+  ]
+}
