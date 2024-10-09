@@ -1,0 +1,20 @@
+{
+  "clusterProperties": [
+    {
+      "goid": "f2a4948bd377984e9403945efdd830d1",
+      "name": "cob1",
+      "checksum": "59caa63777b7e0613f587ab0218a4734e097a867",
+      "description": "",
+      "hiddenProperty": false,
+      "value": "CWP cob 1"
+    },
+    {
+      "goid": "f2a4948bd377984e9403945efdd830d6",
+      "name": "cob2",
+      "checksum": "0c44c9e00ffaac8f61148da462f49635e2b2c020",
+      "description": "",
+      "hiddenProperty": false,
+      "value": "CWP cob 2"
+    }
+  ]
+}
