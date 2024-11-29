@@ -1,0 +1,85 @@
+{
+  "guid": "44a7cf91-a424-4022-aca8-f83617608436",
+  "name": "Protect",
+  "policyType": "FRAGMENT",
+  "checksum": "7e9ace6fa25be12e0d61f84ffb4ccb960272cc07",
+  "folderPath": "/",
+  "soap": false,
+  "policy": {
+    "code": {
+      "All": [
+        {
+          "CodeInjectionProtection": {
+            "includeBody": true,
+            "includeUrlPath": true,
+            "includeUrlQueryString": true,
+            "protections": [
+              "htmlJavaScriptInjection",
+              "hexEncodedInjection",
+              "phpEvalInjection",
+              "shellInjection",
+              "ldapDnInjection",
+              "ldapSearchInjection",
+              "xpathInjection"
+            ],
+            "target": "REQUEST"
+          }
+        },
+        {
+          "SqlAttack": {
+            "includeUrlPath": true,
+            "includeUrlQueryString": true,
+            "protections": [
+              "SqlMetaText",
+              "OraSql",
+              "MsSql",
+              "SqlMeta"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "policyRevisions": [
+    {
+      "goid": "603b4461b4b2b23111a8463096a86c38",
+      "ordinal": 1,
+      "active": true,
+      "author": "admin",
+      "time": "2024-11-28T15:42:40.252Z",
+      "code": {
+        "All": [
+          {
+            "CodeInjectionProtection": {
+              "includeBody": true,
+              "includeUrlPath": true,
+              "includeUrlQueryString": true,
+              "protections": [
+                "htmlJavaScriptInjection",
+                "hexEncodedInjection",
+                "phpEvalInjection",
+                "shellInjection",
+                "ldapDnInjection",
+                "ldapSearchInjection",
+                "xpathInjection"
+              ],
+              "target": "REQUEST"
+            }
+          },
+          {
+            "SqlAttack": {
+              "includeUrlPath": true,
+              "includeUrlQueryString": true,
+              "protections": [
+                "SqlMetaText",
+                "OraSql",
+                "MsSql",
+                "SqlMeta"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

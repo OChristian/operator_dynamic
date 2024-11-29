@@ -1,0 +1,53 @@
+{
+  "guid": "521c4eac-e7b4-4a2e-b7de-f859fddb3e7b",
+  "name": "Add Audit",
+  "policyType": "FRAGMENT",
+  "checksum": "844a20d27bf35f85c8e9aded90ec9d56f6d35dbe",
+  "folderPath": "/aFolder/subFolder1",
+  "soap": false,
+  "policy": {
+    "code": {
+      "All": [
+        {
+          "Comment": "Policy Fragment: Add Audit"
+        },
+        {
+          "Audit": {}
+        },
+        {
+          "AuditDetail": {
+            "detail": "<cob> Audit tracing - v${gateway.environment}!",
+            "level": "WARNING",
+            "loggingOnly": true
+          }
+        }
+      ]
+    }
+  },
+  "policyRevisions": [
+    {
+      "goid": "e2feca757a17167d16ebb4b587d35ec5",
+      "ordinal": 1,
+      "active": true,
+      "author": "admin",
+      "time": "2024-11-29T13:43:44.492Z",
+      "code": {
+        "All": [
+          {
+            "Comment": "Policy Fragment: Add Audit"
+          },
+          {
+            "Audit": {}
+          },
+          {
+            "AuditDetail": {
+              "detail": "<cob> Audit tracing - v${gateway.environment}!",
+              "level": "WARNING",
+              "loggingOnly": true
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

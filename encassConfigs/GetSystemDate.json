@@ -1,0 +1,27 @@
+{
+  "guid": "30a4d269-4e43-45eb-ba40-592c1bd0816d",
+  "name": "GetSystemDate",
+  "checksum": "be5f43fbccbdd8e618584e01b3df0294468840d5",
+  "policyName": "GetSystemDate",
+  "encassArgs": [],
+  "encassResults": [
+    {
+      "name": "currentDate",
+      "type": "DATE_TIME"
+    }
+  ],
+  "properties": [
+    {
+      "name": "allowTracing",
+      "value": "false"
+    },
+    {
+      "name": "paletteFolder",
+      "value": "policyLogic"
+    },
+    {
+      "name": "passMetricsToParent",
+      "value": "false"
+    }
+  ]
+}

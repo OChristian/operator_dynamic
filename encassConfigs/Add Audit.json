@@ -1,0 +1,23 @@
+{
+  "goid": "6975522830b7415b2b387cdbf97b1f5c",
+  "guid": "0a0322ec-b100-4c74-a420-b2a4abb00ef5",
+  "name": "Add Audit",
+  "checksum": "486479fe5edf5d699b8c8900eb98248ddec8c9ce",
+  "policyName": "Add Audit",
+  "encassArgs": [],
+  "encassResults": [],
+  "properties": [
+    {
+      "name": "allowTracing",
+      "value": "false"
+    },
+    {
+      "name": "paletteFolder",
+      "value": "customAssertions"
+    },
+    {
+      "name": "passMetricsToParent",
+      "value": "false"
+    }
+  ]
+}

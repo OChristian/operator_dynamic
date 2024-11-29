@@ -1,0 +1,147 @@
+{
+  "guid": "66b68c3a-269f-432b-9658-6ec9c05222a5",
+  "name": "GetSystemDate",
+  "policyType": "FRAGMENT",
+  "checksum": "b81d6c265db00b45e70822fe1dac1c719b299711",
+  "folderPath": "/Otel Tests",
+  "soap": false,
+  "policy": {
+    "code": {
+      "All": [
+        {
+          "HttpRouting": {
+            "httpMethod": "GET",
+            "omitAuthHeaderConnectReuseSystemDefault": true,
+            "protectedServiceUrl": "https://localhost:8443/echotest",
+            "requestHeaderRules": {
+              ".type": "httpPassthroughRuleSet",
+              "forwardAll": true,
+              "rules": [
+                {
+                  ".type": "httpPassthroughRule",
+                  "name": "Cookie"
+                },
+                {
+                  ".type": "httpPassthroughRule",
+                  "name": "SOAPAction"
+                }
+              ]
+            },
+            "requestParamRules": {
+              ".type": "httpPassthroughRuleSet",
+              "forwardAll": true,
+              "rules": []
+            },
+            "responseHeaderRules": {
+              ".type": "httpPassthroughRuleSet",
+              "forwardAll": true,
+              "rules": [
+                {
+                  ".type": "httpPassthroughRule",
+                  "name": "Set-Cookie"
+                }
+              ]
+            },
+            "samlAssertionVersion": 2
+          }
+        },
+        {
+          "EvaluateJsonPathExpression": {
+            "expression": "$.date",
+            "target": "RESPONSE",
+            "variablePrefix": "date"
+          }
+        },
+        {
+          "EvaluateJsonPathExpression": {
+            "expression": "$.foramt",
+            "target": "RESPONSE",
+            "variablePrefix": "format"
+          }
+        },
+        {
+          "SetVariable": {
+            "dataType": "dateTime",
+            "dateFormat": "${format.result}",
+            "dateOffsetExpression": "",
+            "expression": "${date.result}",
+            "variable": "currentDate"
+          }
+        }
+      ]
+    }
+  },
+  "policyRevisions": [
+    {
+      "goid": "462a855aada3135c2b85786ccb93ff89",
+      "ordinal": 1,
+      "active": true,
+      "author": "admin",
+      "time": "2024-11-27T21:45:59.634Z",
+      "code": {
+        "All": [
+          {
+            "HttpRouting": {
+              "httpMethod": "GET",
+              "omitAuthHeaderConnectReuseSystemDefault": true,
+              "protectedServiceUrl": "https://localhost:8443/echotest",
+              "requestHeaderRules": {
+                ".type": "httpPassthroughRuleSet",
+                "forwardAll": true,
+                "rules": [
+                  {
+                    ".type": "httpPassthroughRule",
+                    "name": "Cookie"
+                  },
+                  {
+                    ".type": "httpPassthroughRule",
+                    "name": "SOAPAction"
+                  }
+                ]
+              },
+              "requestParamRules": {
+                ".type": "httpPassthroughRuleSet",
+                "forwardAll": true,
+                "rules": []
+              },
+              "responseHeaderRules": {
+                ".type": "httpPassthroughRuleSet",
+                "forwardAll": true,
+                "rules": [
+                  {
+                    ".type": "httpPassthroughRule",
+                    "name": "Set-Cookie"
+                  }
+                ]
+              },
+              "samlAssertionVersion": 2
+            }
+          },
+          {
+            "EvaluateJsonPathExpression": {
+              "expression": "$.date",
+              "target": "RESPONSE",
+              "variablePrefix": "date"
+            }
+          },
+          {
+            "EvaluateJsonPathExpression": {
+              "expression": "$.foramt",
+              "target": "RESPONSE",
+              "variablePrefix": "format"
+            }
+          },
+          {
+            "SetVariable": {
+              "dataType": "dateTime",
+              "dateFormat": "${format.result}",
+              "dateOffsetExpression": "",
+              "expression": "${date.result}",
+              "variable": "currentDate"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

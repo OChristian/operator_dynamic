@@ -1,0 +1,23 @@
+{
+  "guid": "24f061e4-5158-4890-bbf8-b382d55a2644",
+  "name": "Protect",
+  "checksum": "401fc0185e49f261bb6ba19928480cbfb2c88713",
+  "description": "Protection againt injection",
+  "policyName": "Protect",
+  "encassArgs": [],
+  "encassResults": [],
+  "properties": [
+    {
+      "name": "allowTracing",
+      "value": "false"
+    },
+    {
+      "name": "paletteFolder",
+      "value": "customAssertions"
+    },
+    {
+      "name": "passMetricsToParent",
+      "value": "false"
+    }
+  ]
+}
