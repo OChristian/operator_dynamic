@@ -1,0 +1,1318 @@
+{
+  "services": [
+    {
+      "guid": "9ca8b7a5-82b3-413a-a5a6-183c476eb673",
+      "name": "Audit Hello",
+      "resolutionPath": "/audit/hello",
+      "serviceType": "WEB_API",
+      "checksum": "1335b77af8a20a2ce1e172e4d28a2844af1ce2fe",
+      "enabled": true,
+      "folderPath": "/aFolder/subFolder2",
+      "methodsAllowed": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "tracingEnabled": false,
+      "wssProcessingEnabled": false,
+      "laxResolution": false,
+      "policy": {
+        "code": {
+          "All": [
+            {
+              "Encapsulated": {
+                "encassGuid": "0a0322ec-b100-4c74-a420-b2a4abb00ef5",
+                "encassName": "Add Audit"
+              }
+            },
+            {
+              "HardcodedResponse": {
+                "body": "{\n\"message\": \"hello!\",\n\"environment\": \"${gateway.environment}\"\n}\n",
+                "contentType": "application/json; charset=UTF-8"
+              }
+            }
+          ]
+        }
+      },
+      "policyRevisions": [
+        {
+          "goid": "e2feca757a17167d16ebb4b587d35ebe",
+          "ordinal": 2,
+          "active": false,
+          "author": "admin",
+          "time": "2024-11-29T13:34:20.855Z",
+          "code": {
+            "All": [
+              {
+                "Encapsulated": {
+                  "encassGuid": "0a0322ec-b100-4c74-a420-b2a4abb00ef5",
+                  "encassName": "Add Audit"
+                }
+              },
+              {
+                "HardcodedResponse": {
+                  "body": "{\n\"message\": \"hello!\",\n\"environment\": \"${gateway.environment}\"\n}\n",
+                  "contentType": "application/json; charset=UTF-8"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "goid": "e2feca757a17167d16ebb4b587d35eca",
+          "ordinal": 3,
+          "active": true,
+          "author": "admin",
+          "time": "2024-11-29T13:45:29.353Z",
+          "code": {
+            "All": [
+              {
+                "Encapsulated": {
+                  "encassGuid": "0a0322ec-b100-4c74-a420-b2a4abb00ef5",
+                  "encassName": "Add Audit"
+                }
+              },
+              {
+                "HardcodedResponse": {
+                  "body": "{\n\"message\": \"hello!\",\n\"environment\": \"${gateway.environment}\"\n}\n",
+                  "contentType": "application/json; charset=UTF-8"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "b6fd7340-61f8-425e-be5d-134c3ea36373",
+      "name": "Back-end",
+      "resolutionPath": "/be",
+      "serviceType": "WEB_API",
+      "checksum": "187c15a7aae70b9352d60e700b586cd92652705b",
+      "enabled": true,
+      "folderPath": "/",
+      "methodsAllowed": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "tracingEnabled": false,
+      "wssProcessingEnabled": false,
+      "laxResolution": false,
+      "policy": {
+        "code": {
+          "All": [
+            {
+              "RaiseError": {},
+              ".properties": {
+                ".enabled": false
+              }
+            },
+            {
+              "SetVariable": {
+                "expression": "value1",
+                "variable": "var1"
+              }
+            },
+            {
+              "SetVariable": {
+                "expression": "value2",
+                "variable": "var2"
+              }
+            },
+            {
+              "HardcodedResponse": {
+                "body": "Back-end - Hello !\n${var1}\n${var2}\n${otel.traceId}"
+              }
+            }
+          ]
+        }
+      },
+      "policyRevisions": [
+        {
+          "goid": "603b4461b4b2b23111a8463096a86bd2",
+          "ordinal": 1,
+          "active": true,
+          "author": "admin",
+          "time": "2024-11-28T15:16:03.775Z",
+          "code": {
+            "All": [
+              {
+                "RaiseError": {},
+                ".properties": {
+                  ".enabled": false
+                }
+              },
+              {
+                "SetVariable": {
+                  "expression": "value1",
+                  "variable": "var1"
+                }
+              },
+              {
+                "SetVariable": {
+                  "expression": "value2",
+                  "variable": "var2"
+                }
+              },
+              {
+                "HardcodedResponse": {
+                  "body": "Back-end - Hello !\n${var1}\n${var2}\n${otel.traceId}"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "1136de11-2d1d-43d0-b5fc-b23244c82ac9",
+      "name": "Code",
+      "resolutionPath": "/code",
+      "serviceType": "WEB_API",
+      "checksum": "5e63285953175b68a2b28c5b38e0ce3edc28dd55",
+      "enabled": true,
+      "folderPath": "/",
+      "methodsAllowed": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "tracingEnabled": false,
+      "wssProcessingEnabled": false,
+      "laxResolution": false,
+      "policy": {
+        "code": {
+          "All": [
+            {
+              "HardcodedResponse": {
+                "body": "Response code is: ${request.http.parameters.code}",
+                "status": "${request.http.parameters.code}"
+              }
+            }
+          ]
+        }
+      },
+      "policyRevisions": [
+        {
+          "goid": "603b4461b4b2b23111a8463096a86be1",
+          "ordinal": 1,
+          "active": true,
+          "author": "admin",
+          "time": "2024-11-28T15:16:04.232Z",
+          "code": {
+            "All": [
+              {
+                "HardcodedResponse": {
+                  "body": "Response code is: ${request.http.parameters.code}",
+                  "status": "${request.http.parameters.code}"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "20ac1eca-2456-440a-86ed-a511fa3c33cd",
+      "name": "DRL",
+      "resolutionPath": "/drl",
+      "serviceType": "WEB_API",
+      "checksum": "0d3a28bda3678de00bcce491f99a548173f0d045",
+      "enabled": true,
+      "folderPath": "/",
+      "methodsAllowed": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "tracingEnabled": false,
+      "wssProcessingEnabled": false,
+      "laxResolution": false,
+      "policy": {
+        "code": {
+          "All": [
+            {
+              "DistributedRateLimit": {
+                "burstLimit": "10",
+                "counterId": "08079411212a73cf-${request.clientid}",
+                "counterPrefix": "08079411212a73cf",
+                "limitEachCounterType": "User or IP",
+                "limitExceededOption": "Throttle",
+                "limitRequests": "5",
+                "rateLimitUnit": "Minute"
+              }
+            },
+            {
+              "HardcodedResponse": {
+                "body": "Remaining: ${distributedRateLimit.requests.remaining}",
+                "contentType": "application/json; charset=UTF-8"
+              }
+            }
+          ]
+        }
+      },
+      "policyRevisions": [
+        {
+          "goid": "603b4461b4b2b23111a8463096a86c09",
+          "ordinal": 2,
+          "active": true,
+          "author": "admin",
+          "time": "2024-11-28T15:16:05.177Z",
+          "code": {
+            "All": [
+              {
+                "DistributedRateLimit": {
+                  "burstLimit": "10",
+                  "counterId": "08079411212a73cf-${request.clientid}",
+                  "counterPrefix": "08079411212a73cf",
+                  "limitEachCounterType": "User or IP",
+                  "limitExceededOption": "Throttle",
+                  "limitRequests": "5",
+                  "rateLimitUnit": "Minute"
+                }
+              },
+              {
+                "HardcodedResponse": {
+                  "body": "Remaining: ${distributedRateLimit.requests.remaining}",
+                  "contentType": "application/json; charset=UTF-8"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "afa2526c-4fba-4369-b06b-818dafd7eb59",
+      "name": "Redis KV",
+      "resolutionPath": "/kv*",
+      "serviceType": "WEB_API",
+      "checksum": "6b3e638eed974139ee52211c2e57d8617f8cf389",
+      "enabled": true,
+      "folderPath": "/",
+      "methodsAllowed": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "tracingEnabled": false,
+      "wssProcessingEnabled": false,
+      "laxResolution": false,
+      "policy": {
+        "code": {
+          "All": [
+            {
+              "FaultLevel": {
+                "levelInfo": {
+                  ".type": "soapFaultLevel",
+                  "level": 4
+                }
+              }
+            },
+            {
+              "SetVariable": {
+                "expression": "${request.http.parameters.value}",
+                "variable": "valueToStore"
+              }
+            },
+            {
+              "SetVariable": {
+                "expression": "${request.url.path}",
+                "variable": "urlPath"
+              }
+            },
+            {
+              "SetVariable": {
+                "contentType": "text/xml; charset=utf-8",
+                "dataType": "message",
+                "expression": "<codes>\r\n\t<code id=\"0\">Success</code>\r\n\t<code id=\"1\">Invalid Store ID</code>\r\n\t<code id=\"2\">Max Entries Exceeded</code>\r\n\t<code id=\"3\">Max Entry Size Exceeded</code>\r\n\t<code id=\"4\">Unregistered provider [not properly configured; not available]</code>\r\n\t<code id=\"5\">Invalid key</code>\r\n\t<code id=\"6\">Invalid max age value</code>\r\n\t<code id=\"7\">General error (catch all)</code>\r\n</codes>\r\n\r\n",
+                "variable": "storageCodes"
+              }
+            },
+            {
+              "OneOrMore": [
+                {
+                  "All": [
+                    {
+                      "ComparisonAssertion": {
+                        "expression1": "${urlPath}",
+                        "expression2": "/kv/store",
+                        "predicates": [
+                          {
+                            ".type": ":binary",
+                            "rightValue": "/kv/store"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "AuditDetail": {
+                        "detail": "Path is ${urlPath} - storing the value \"${valueToStore}\" in KV.",
+                        "loggingOnly": true
+                      }
+                    },
+                    {
+                      "KeyValueStorage": {
+                        "continueOnError": false,
+                        "key": "cob",
+                        "maxAge": "10m",
+                        "otherTargetMessageVariable": "valueToStore",
+                        "storeId": "redis",
+                        "target": "OTHER"
+                      }
+                    },
+                    {
+                      "AuditDetail": {
+                        "detail": "Value \"${valueToStore}\" stored in KV.",
+                        "loggingOnly": true
+                      }
+                    },
+                    {
+                      "SetVariable": {
+                        "expression": "/codes/code[@id=${kvstorage.assertion.status}]/text()",
+                        "variable": "xPath"
+                      }
+                    },
+                    {
+                      "ResponseXpath": {
+                        "variablePrefix": "kvResponse",
+                        "xmlMsgSrc": "storageCodes",
+                        "xpathExpression": {
+                          ".type": "xpathExpression",
+                          "expression": "${xPath}",
+                          "namespaces": {
+                            "s": "http://schemas.xmlsoap.org/soap/envelope/"
+                          },
+                          "xpathVersion": "XPATH_1_0"
+                        }
+                      }
+                    },
+                    {
+                      "HardcodedResponse": {
+                        "body": "Storage status: ${kvstorage.assertion.status} - ${kvResponse.result}\n\n"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "All": [
+                    {
+                      "ComparisonAssertion": {
+                        "expression1": "${urlPath}",
+                        "expression2": "/kv/read",
+                        "predicates": [
+                          {
+                            ".type": ":binary",
+                            "rightValue": "/kv/read"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "AuditDetail": {
+                        "detail": "Path is ${urlPath} - reading the value from KV.",
+                        "loggingOnly": true
+                      }
+                    },
+                    {
+                      "KeyValueLookup": {
+                        "key": "cob",
+                        "storeId": "redis"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "policyRevisions": [
+        {
+          "goid": "603b4461b4b2b23111a8463096a86c10",
+          "ordinal": 1,
+          "active": true,
+          "author": "admin",
+          "time": "2024-11-28T15:16:05.369Z",
+          "code": {
+            "All": [
+              {
+                "FaultLevel": {
+                  "levelInfo": {
+                    ".type": "soapFaultLevel",
+                    "level": 4
+                  }
+                }
+              },
+              {
+                "SetVariable": {
+                  "expression": "${request.http.parameters.value}",
+                  "variable": "valueToStore"
+                }
+              },
+              {
+                "SetVariable": {
+                  "expression": "${request.url.path}",
+                  "variable": "urlPath"
+                }
+              },
+              {
+                "SetVariable": {
+                  "contentType": "text/xml; charset=utf-8",
+                  "dataType": "message",
+                  "expression": "<codes>\r\n\t<code id=\"0\">Success</code>\r\n\t<code id=\"1\">Invalid Store ID</code>\r\n\t<code id=\"2\">Max Entries Exceeded</code>\r\n\t<code id=\"3\">Max Entry Size Exceeded</code>\r\n\t<code id=\"4\">Unregistered provider [not properly configured; not available]</code>\r\n\t<code id=\"5\">Invalid key</code>\r\n\t<code id=\"6\">Invalid max age value</code>\r\n\t<code id=\"7\">General error (catch all)</code>\r\n</codes>\r\n\r\n",
+                  "variable": "storageCodes"
+                }
+              },
+              {
+                "OneOrMore": [
+                  {
+                    "All": [
+                      {
+                        "ComparisonAssertion": {
+                          "expression1": "${urlPath}",
+                          "expression2": "/kv/store",
+                          "predicates": [
+                            {
+                              ".type": ":binary",
+                              "rightValue": "/kv/store"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "AuditDetail": {
+                          "detail": "Path is ${urlPath} - storing the value \"${valueToStore}\" in KV.",
+                          "loggingOnly": true
+                        }
+                      },
+                      {
+                        "KeyValueStorage": {
+                          "continueOnError": false,
+                          "key": "cob",
+                          "maxAge": "10m",
+                          "otherTargetMessageVariable": "valueToStore",
+                          "storeId": "redis",
+                          "target": "OTHER"
+                        }
+                      },
+                      {
+                        "AuditDetail": {
+                          "detail": "Value \"${valueToStore}\" stored in KV.",
+                          "loggingOnly": true
+                        }
+                      },
+                      {
+                        "SetVariable": {
+                          "expression": "/codes/code[@id=${kvstorage.assertion.status}]/text()",
+                          "variable": "xPath"
+                        }
+                      },
+                      {
+                        "ResponseXpath": {
+                          "variablePrefix": "kvResponse",
+                          "xmlMsgSrc": "storageCodes",
+                          "xpathExpression": {
+                            ".type": "xpathExpression",
+                            "expression": "${xPath}",
+                            "namespaces": {
+                              "s": "http://schemas.xmlsoap.org/soap/envelope/"
+                            },
+                            "xpathVersion": "XPATH_1_0"
+                          }
+                        }
+                      },
+                      {
+                        "HardcodedResponse": {
+                          "body": "Storage status: ${kvstorage.assertion.status} - ${kvResponse.result}\n\n"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "All": [
+                      {
+                        "ComparisonAssertion": {
+                          "expression1": "${urlPath}",
+                          "expression2": "/kv/read",
+                          "predicates": [
+                            {
+                              ".type": ":binary",
+                              "rightValue": "/kv/read"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "AuditDetail": {
+                          "detail": "Path is ${urlPath} - reading the value from KV.",
+                          "loggingOnly": true
+                        }
+                      },
+                      {
+                        "KeyValueLookup": {
+                          "key": "cob",
+                          "storeId": "redis"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "86524457-a93d-4bdd-a23e-9f98f1463b0b",
+      "name": "age",
+      "resolutionPath": "/test5",
+      "serviceType": "WEB_API",
+      "checksum": "cff2e01078d3bc37be30a4eee7de1d269d4d2bc0",
+      "enabled": true,
+      "folderPath": "/Otel Tests",
+      "methodsAllowed": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "tracingEnabled": false,
+      "wssProcessingEnabled": false,
+      "laxResolution": false,
+      "policy": {
+        "code": {
+          "All": [
+            {
+              "OneOrMore": [
+                {
+                  "All": [
+                    {
+                      "LookupDynamicContextVariables": {
+                        "sourceVariable": "request.http.parameter.dob",
+                        "targetDataType": "string",
+                        "targetOutputVariablePrefix": "dobin"
+                      }
+                    },
+                    {
+                      "SetVariable": {
+                        "expression": "${dobin.output}",
+                        "variable": "dob"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "SetVariable": {
+                    "expression": "${gateway.time.dd/MM/yyyy}",
+                    "variable": "dob"
+                  },
+                  ".properties": {
+                    ".left.comment": "Set default date format"
+                  }
+                }
+              ],
+              ".properties": {
+                ".left.comment": "DOB"
+              }
+            },
+            {
+              "OneOrMore": [
+                {
+                  "All": [
+                    {
+                      "LookupDynamicContextVariables": {
+                        "sourceVariable": "request.http.parameter.format",
+                        "targetDataType": "string",
+                        "targetOutputVariablePrefix": "formatin"
+                      }
+                    },
+                    {
+                      "SetVariable": {
+                        "expression": "${formatin.output}",
+                        "variable": "dob_format"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "SetVariable": {
+                    "expression": "dd/MM/yyyy",
+                    "variable": "dob_format"
+                  },
+                  ".properties": {
+                    ".left.comment": "//Set default"
+                  }
+                }
+              ],
+              ".properties": {
+                ".left.comment": "DOB-format"
+              }
+            },
+            {
+              "SetVariable": {
+                "dataType": "dateTime",
+                "dateFormat": "${dob_format}",
+                "dateOffsetExpression": "",
+                "dateOffsetField": 12,
+                "expression": "${dob}",
+                "variable": "dob_date"
+              },
+              ".properties": {
+                ".left.comment": "DoB string to date"
+              }
+            },
+            {
+              "Encapsulated": {
+                "encassGuid": "30a4d269-4e43-45eb-ba40-592c1bd0816d",
+                "encassName": "GetSystemDate"
+              }
+            },
+            {
+              "SetVariable": {
+                "expression": "${currentDate.seconds}",
+                "variable": "currentDateInSeconds"
+              },
+              ".properties": {
+                ".left.comment": "System date/time to seconds"
+              }
+            },
+            {
+              "SetVariable": {
+                "expression": "${dob_date.seconds}",
+                "variable": "dobInSeconds"
+              },
+              ".properties": {
+                ".left.comment": "DoB to seconds"
+              }
+            },
+            {
+              "JavaScript": {
+                "executionTimeout": "",
+                "name": "",
+                "script": "var now = context.getVariable('currentDateInSeconds');\nvar dob = context.getVariable('dob_date.seconds');\ncontext.setVariable('diff', Math.floor((now - dob) / 31536000));"
+              },
+              ".properties": {
+                ".left.comment": "Calculate Age in years"
+              }
+            },
+            {
+              "HardcodedResponse": {
+                "body": "{\n  \"dateOfBirth\" : \"${dob_date.dd/MMM/yyyy}\",\n  \"age\" : \"${diff}\",\n}",
+                "contentType": "application/json; charset=UTF-8"
+              }
+            }
+          ]
+        }
+      },
+      "policyRevisions": [
+        {
+          "goid": "462a855aada3135c2b85786ccb93ff96",
+          "ordinal": 2,
+          "active": true,
+          "author": "admin",
+          "time": "2024-11-27T21:45:59.777Z",
+          "code": {
+            "All": [
+              {
+                "OneOrMore": [
+                  {
+                    "All": [
+                      {
+                        "LookupDynamicContextVariables": {
+                          "sourceVariable": "request.http.parameter.dob",
+                          "targetDataType": "string",
+                          "targetOutputVariablePrefix": "dobin"
+                        }
+                      },
+                      {
+                        "SetVariable": {
+                          "expression": "${dobin.output}",
+                          "variable": "dob"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "SetVariable": {
+                      "expression": "${gateway.time.dd/MM/yyyy}",
+                      "variable": "dob"
+                    },
+                    ".properties": {
+                      ".left.comment": "Set default date format"
+                    }
+                  }
+                ],
+                ".properties": {
+                  ".left.comment": "DOB"
+                }
+              },
+              {
+                "OneOrMore": [
+                  {
+                    "All": [
+                      {
+                        "LookupDynamicContextVariables": {
+                          "sourceVariable": "request.http.parameter.format",
+                          "targetDataType": "string",
+                          "targetOutputVariablePrefix": "formatin"
+                        }
+                      },
+                      {
+                        "SetVariable": {
+                          "expression": "${formatin.output}",
+                          "variable": "dob_format"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "SetVariable": {
+                      "expression": "dd/MM/yyyy",
+                      "variable": "dob_format"
+                    },
+                    ".properties": {
+                      ".left.comment": "//Set default"
+                    }
+                  }
+                ],
+                ".properties": {
+                  ".left.comment": "DOB-format"
+                }
+              },
+              {
+                "SetVariable": {
+                  "dataType": "dateTime",
+                  "dateFormat": "${dob_format}",
+                  "dateOffsetExpression": "",
+                  "dateOffsetField": 12,
+                  "expression": "${dob}",
+                  "variable": "dob_date"
+                },
+                ".properties": {
+                  ".left.comment": "DoB string to date"
+                }
+              },
+              {
+                "Encapsulated": {
+                  "encassGuid": "30a4d269-4e43-45eb-ba40-592c1bd0816d",
+                  "encassName": "GetSystemDate"
+                }
+              },
+              {
+                "SetVariable": {
+                  "expression": "${currentDate.seconds}",
+                  "variable": "currentDateInSeconds"
+                },
+                ".properties": {
+                  ".left.comment": "System date/time to seconds"
+                }
+              },
+              {
+                "SetVariable": {
+                  "expression": "${dob_date.seconds}",
+                  "variable": "dobInSeconds"
+                },
+                ".properties": {
+                  ".left.comment": "DoB to seconds"
+                }
+              },
+              {
+                "JavaScript": {
+                  "executionTimeout": "",
+                  "name": "",
+                  "script": "var now = context.getVariable('currentDateInSeconds');\nvar dob = context.getVariable('dob_date.seconds');\ncontext.setVariable('diff', Math.floor((now - dob) / 31536000));"
+                },
+                ".properties": {
+                  ".left.comment": "Calculate Age in years"
+                }
+              },
+              {
+                "HardcodedResponse": {
+                  "body": "{\n  \"dateOfBirth\" : \"${dob_date.dd/MMM/yyyy}\",\n  \"age\" : \"${diff}\",\n}",
+                  "contentType": "application/json; charset=UTF-8"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "94e9f754-3755-4120-b63b-9684e010b0c3",
+      "name": "echo",
+      "resolutionPath": "/echotest",
+      "serviceType": "WEB_API",
+      "checksum": "08db9402e7d697298eb48b091e82d27d23f32036",
+      "enabled": true,
+      "folderPath": "/Otel Tests",
+      "methodsAllowed": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "tracingEnabled": false,
+      "wssProcessingEnabled": false,
+      "laxResolution": false,
+      "policy": {
+        "code": {
+          "All": [
+            {
+              "HardcodedResponse": {
+                "body": "{\n \"date\" : \"${gateway.time.dd/MM/yyyy}\",\n \"foramt\" : \"dd/MM/yyyy\"\n}",
+                "contentType": "application/json; charset=UTF-8"
+              }
+            }
+          ]
+        }
+      },
+      "policyRevisions": [
+        {
+          "goid": "462a855aada3135c2b85786ccb93ff8c",
+          "ordinal": 2,
+          "active": true,
+          "author": "admin",
+          "time": "2024-11-27T21:45:59.737Z",
+          "code": {
+            "All": [
+              {
+                "HardcodedResponse": {
+                  "body": "{\n \"date\" : \"${gateway.time.dd/MM/yyyy}\",\n \"foramt\" : \"dd/MM/yyyy\"\n}",
+                  "contentType": "application/json; charset=UTF-8"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "87c72938-3cb4-40eb-b6e7-96fa46d15d30",
+      "name": "test1",
+      "resolutionPath": "/test1",
+      "serviceType": "WEB_API",
+      "checksum": "e1421b039c7203c93069c019349c5b1e6951b56a",
+      "enabled": true,
+      "folderPath": "/Otel Tests",
+      "methodsAllowed": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "tracingEnabled": false,
+      "wssProcessingEnabled": true,
+      "laxResolution": false,
+      "policy": {
+        "code": {
+          "All": [
+            {
+              "Comment": "********************************************************************************************************************"
+            },
+            {
+              "Comment": "* Policy runs successfully with a routing assertion."
+            },
+            {
+              "Comment": "********************************************************************************************************************"
+            },
+            {
+              "HttpRouting": {
+                "httpMethod": "GET",
+                "omitAuthHeaderConnectReuseSystemDefault": true,
+                "protectedServiceUrl": "https://localhost:8443/echotest",
+                "requestHeaderRules": {
+                  ".type": "httpPassthroughRuleSet",
+                  "forwardAll": true,
+                  "rules": [
+                    {
+                      ".type": "httpPassthroughRule",
+                      "name": "Cookie"
+                    },
+                    {
+                      ".type": "httpPassthroughRule",
+                      "name": "SOAPAction"
+                    }
+                  ]
+                },
+                "requestParamRules": {
+                  ".type": "httpPassthroughRuleSet",
+                  "forwardAll": true,
+                  "rules": []
+                },
+                "responseHeaderRules": {
+                  ".type": "httpPassthroughRuleSet",
+                  "forwardAll": true,
+                  "rules": [
+                    {
+                      ".type": "httpPassthroughRule",
+                      "name": "Set-Cookie"
+                    }
+                  ]
+                },
+                "samlAssertionVersion": 2
+              }
+            }
+          ]
+        }
+      },
+      "policyRevisions": [
+        {
+          "goid": "462a855aada3135c2b85786ccb93ff8e",
+          "ordinal": 2,
+          "active": true,
+          "author": "admin",
+          "time": "2024-11-27T21:45:59.745Z",
+          "code": {
+            "All": [
+              {
+                "Comment": "********************************************************************************************************************"
+              },
+              {
+                "Comment": "* Policy runs successfully with a routing assertion."
+              },
+              {
+                "Comment": "********************************************************************************************************************"
+              },
+              {
+                "HttpRouting": {
+                  "httpMethod": "GET",
+                  "omitAuthHeaderConnectReuseSystemDefault": true,
+                  "protectedServiceUrl": "https://localhost:8443/echotest",
+                  "requestHeaderRules": {
+                    ".type": "httpPassthroughRuleSet",
+                    "forwardAll": true,
+                    "rules": [
+                      {
+                        ".type": "httpPassthroughRule",
+                        "name": "Cookie"
+                      },
+                      {
+                        ".type": "httpPassthroughRule",
+                        "name": "SOAPAction"
+                      }
+                    ]
+                  },
+                  "requestParamRules": {
+                    ".type": "httpPassthroughRuleSet",
+                    "forwardAll": true,
+                    "rules": []
+                  },
+                  "responseHeaderRules": {
+                    ".type": "httpPassthroughRuleSet",
+                    "forwardAll": true,
+                    "rules": [
+                      {
+                        ".type": "httpPassthroughRule",
+                        "name": "Set-Cookie"
+                      }
+                    ]
+                  },
+                  "samlAssertionVersion": 2
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "3ac15e0b-1b66-469d-b845-95944e133095",
+      "name": "test2",
+      "resolutionPath": "/test2",
+      "serviceType": "WEB_API",
+      "checksum": "d21129ef461dc472b7f84231344ce84ede1937e1",
+      "enabled": true,
+      "folderPath": "/Otel Tests",
+      "methodsAllowed": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "tracingEnabled": false,
+      "wssProcessingEnabled": true,
+      "laxResolution": false,
+      "policy": {
+        "code": {
+          "All": [
+            {
+              "Comment": "********************************************************************************************************************"
+            },
+            {
+              "Comment": "* Policy fails with a policy violation."
+            },
+            {
+              "Comment": "********************************************************************************************************************"
+            },
+            {
+              "CustomizeErrorResponse": {
+                "content": "Policy Violation",
+                "extraHeaders": []
+              }
+            },
+            {
+              "False": {}
+            }
+          ]
+        }
+      },
+      "policyRevisions": [
+        {
+          "goid": "462a855aada3135c2b85786ccb93ff90",
+          "ordinal": 2,
+          "active": true,
+          "author": "admin",
+          "time": "2024-11-27T21:45:59.752Z",
+          "code": {
+            "All": [
+              {
+                "Comment": "********************************************************************************************************************"
+              },
+              {
+                "Comment": "* Policy fails with a policy violation."
+              },
+              {
+                "Comment": "********************************************************************************************************************"
+              },
+              {
+                "CustomizeErrorResponse": {
+                  "content": "Policy Violation",
+                  "extraHeaders": []
+                }
+              },
+              {
+                "False": {}
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "58fe868e-5b77-439e-8df7-8337823b9d74",
+      "name": "test3",
+      "resolutionPath": "/test3",
+      "serviceType": "WEB_API",
+      "checksum": "d05bcba1085213b742adb58af2c676a584204e1d",
+      "enabled": true,
+      "folderPath": "/Otel Tests",
+      "methodsAllowed": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "tracingEnabled": false,
+      "wssProcessingEnabled": true,
+      "laxResolution": false,
+      "policy": {
+        "code": {
+          "All": [
+            {
+              "Comment": "********************************************************************************************************************"
+            },
+            {
+              "Comment": "* Policy fails with a routing failure."
+            },
+            {
+              "Comment": "********************************************************************************************************************"
+            },
+            {
+              "CustomizeErrorResponse": {
+                "content": "Routing Failure",
+                "extraHeaders": []
+              }
+            },
+            {
+              "HttpRouting": {
+                "httpMethod": "GET",
+                "protectedServiceUrl": "http://unknowhostfoobarxyz/foo/bar",
+                "requestHeaderRules": {
+                  ".type": "httpPassthroughRuleSet",
+                  "forwardAll": true,
+                  "rules": [
+                    {
+                      ".type": "httpPassthroughRule",
+                      "name": "Cookie"
+                    },
+                    {
+                      ".type": "httpPassthroughRule",
+                      "name": "SOAPAction"
+                    }
+                  ]
+                },
+                "requestParamRules": {
+                  ".type": "httpPassthroughRuleSet",
+                  "forwardAll": true,
+                  "rules": []
+                },
+                "responseHeaderRules": {
+                  ".type": "httpPassthroughRuleSet",
+                  "forwardAll": true,
+                  "rules": [
+                    {
+                      ".type": "httpPassthroughRule",
+                      "name": "Set-Cookie"
+                    }
+                  ]
+                },
+                "samlAssertionVersion": 2
+              }
+            }
+          ]
+        }
+      },
+      "policyRevisions": [
+        {
+          "goid": "462a855aada3135c2b85786ccb93ff92",
+          "ordinal": 2,
+          "active": true,
+          "author": "admin",
+          "time": "2024-11-27T21:45:59.76Z",
+          "code": {
+            "All": [
+              {
+                "Comment": "********************************************************************************************************************"
+              },
+              {
+                "Comment": "* Policy fails with a routing failure."
+              },
+              {
+                "Comment": "********************************************************************************************************************"
+              },
+              {
+                "CustomizeErrorResponse": {
+                  "content": "Routing Failure",
+                  "extraHeaders": []
+                }
+              },
+              {
+                "HttpRouting": {
+                  "httpMethod": "GET",
+                  "protectedServiceUrl": "http://unknowhostfoobarxyz/foo/bar",
+                  "requestHeaderRules": {
+                    ".type": "httpPassthroughRuleSet",
+                    "forwardAll": true,
+                    "rules": [
+                      {
+                        ".type": "httpPassthroughRule",
+                        "name": "Cookie"
+                      },
+                      {
+                        ".type": "httpPassthroughRule",
+                        "name": "SOAPAction"
+                      }
+                    ]
+                  },
+                  "requestParamRules": {
+                    ".type": "httpPassthroughRuleSet",
+                    "forwardAll": true,
+                    "rules": []
+                  },
+                  "responseHeaderRules": {
+                    ".type": "httpPassthroughRuleSet",
+                    "forwardAll": true,
+                    "rules": [
+                      {
+                        ".type": "httpPassthroughRule",
+                        "name": "Set-Cookie"
+                      }
+                    ]
+                  },
+                  "samlAssertionVersion": 2
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "dad19eae-d788-4ad1-aaf3-2196ae4e19b5",
+      "name": "test4",
+      "resolutionPath": "/test4",
+      "serviceType": "WEB_API",
+      "checksum": "fda288a5ddf1627617c7ceea170deeea71e29304",
+      "enabled": true,
+      "folderPath": "/Otel Tests",
+      "methodsAllowed": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "tracingEnabled": false,
+      "wssProcessingEnabled": true,
+      "laxResolution": false,
+      "policy": {
+        "code": {
+          "All": [
+            {
+              "Comment": "********************************************************************************************************************"
+            },
+            {
+              "Comment": "* Policy runs successfully without a routing assertion."
+            },
+            {
+              "Comment": "********************************************************************************************************************"
+            },
+            {
+              "SetVariable": {
+                "expression": "this is a test",
+                "variable": "test"
+              }
+            },
+            {
+              "HardcodedResponse": {
+                "body": "Policy Successful. No routing",
+                "contentType": "text/plain; charset=UTF-8"
+              }
+            }
+          ]
+        }
+      },
+      "policyRevisions": [
+        {
+          "goid": "462a855aada3135c2b85786ccb93ff94",
+          "ordinal": 2,
+          "active": true,
+          "author": "admin",
+          "time": "2024-11-27T21:45:59.769Z",
+          "code": {
+            "All": [
+              {
+                "Comment": "********************************************************************************************************************"
+              },
+              {
+                "Comment": "* Policy runs successfully without a routing assertion."
+              },
+              {
+                "Comment": "********************************************************************************************************************"
+              },
+              {
+                "SetVariable": {
+                  "expression": "this is a test",
+                  "variable": "test"
+                }
+              },
+              {
+                "HardcodedResponse": {
+                  "body": "Policy Successful. No routing",
+                  "contentType": "text/plain; charset=UTF-8"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
