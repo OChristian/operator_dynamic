@@ -1,0 +1,43 @@
+{
+  "services": [
+    {
+      "guid": "b7e9509a-2962-475a-997c-63689a7e884f",
+      "name": "Mesut",
+      "resolutionPath": "/mesut",
+      "serviceType": "WEB_API",
+      "checksum": "c3f138eba726e7f6e8ceb771154ba1c76c727f9f",
+      "enabled": true,
+      "folderPath": "/",
+      "methodsAllowed": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "tracingEnabled": false,
+      "wssProcessingEnabled": false,
+      "laxResolution": false,
+      "policy": {
+        "code": {
+          "All": [
+            {
+              "HardcodedResponse": {
+                "body": "Welcome Mesut at the API Days 2024!"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "properties": {
+    "meta": {
+      "id": "5744cd9f-0c36-40d2-862d-ad172751c06c",
+      "name": "Gateway Graphman Bundle - 2024-12-04T11:00:48.334Z",
+      "author": "admin",
+      "hostname": "localhost",
+      "timestamp": "2024-12-04T11:00:48.334Z"
+    },
+    "defaultAction": "NEW_OR_UPDATE"
+  }
+}
